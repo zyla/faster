@@ -17,7 +17,7 @@ pub trait Abs {
     ///
     /// # fn main() {
     /// assert_eq!(i32s(-2).abs(), u32s(2));
-    /// assert_eq!(i8s(-256).abs(), u8s(256));
+    /// assert_eq!(i8s(-128).abs(), u8s(128));
     /// # }
     /// ```
     fn abs(&self) -> Self::Out;
