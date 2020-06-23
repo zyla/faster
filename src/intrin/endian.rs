@@ -96,8 +96,8 @@ macro_rules! test_packed_swap_bytes {
                 #[test]
                 fn $fn() {
                     let s = (0x0102030405060708u64 & ((<$vec as Packed>::Scalar::MAX - 1) as u64)) as <$vec as Packed>::Scalar;
-                    let a = $vec::interleave(s, s);
-                    let b = $vec::interleave(s.swap_bytes(), s.swap_bytes());
+                    let a = $vec::splat(s);
+                    let b = $vec::splat(s.swap_bytes());
                     assert_eq!(a.swap_bytes(), b);
                 }
             )*
